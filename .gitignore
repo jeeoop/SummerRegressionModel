@@ -1,6 +1,12 @@
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
+log
+archives
+notes
+control
+workflow/derby.log
+scripts/java
 
 # Folder config file
 Desktop.ini

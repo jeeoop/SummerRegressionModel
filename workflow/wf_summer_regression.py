@@ -53,7 +53,7 @@ if __name__ == "__main__":
     ##  -----------------  ##
     ##  check whether data has been updated for the last date of last month.
     MDL_DT = (dtft(ydystring)-timedelta(1)).strftime("%Y-%m-%d")
-    pool = happybase.ConnectionPool(size=2, host='172.25.10.78')
+    pool = happybase.ConnectionPool(size=2, host='hbasemaster')
     with pool.connection() as conn:
         h_smt = conn.table('ETL_ESI_SMT_G4')
         h_tem = conn.table('ETL_WEATHER_INFO_24')

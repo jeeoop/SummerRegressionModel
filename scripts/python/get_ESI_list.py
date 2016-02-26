@@ -25,7 +25,7 @@ ydystring = sys.argv[1]
 hr2305 = range(0,5)+range(22,24)
 
 projectName = 'sumReg_get_list'
-pool1 = happybase.ConnectionPool(size=3, host='172.25.10.78')
+pool1 = happybase.ConnectionPool(size=3, host='hbasemaster')
 nmRk = ydystring +'_'+ projectName
 hivePath = '/bgdrtlqa/appdata/summer_regression/py_s_esi_list/eff_dt='
 outputFile = '/home/ittestbat/_pyParallelTemp_sumReg/sumReg_ESI_list_'+ rgNum +'.csv'
@@ -159,7 +159,7 @@ if __name__ == "__main__":
     totalT = datetime.now()-startT
     timepass = totalT.seconds/60.0
     print 'completed %d counts, time used: %.2f minutes.' % (counts, timepass)
-    tConn = happybase.Connection(host='172.25.10.78')
+    tConn = happybase.Connection(host='hbasemaster')
     statusT = tConn.table('Parallel_Process_Check_Status')
     tColNm = 'Status:' + rgNum
     statusT.put(nmRk, {tColNm: 'Completed. See log file for detail.'})

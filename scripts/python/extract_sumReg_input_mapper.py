@@ -53,7 +53,7 @@ def read_input(file):
 
 def main():
     allText = read_input(sys.stdin)
-    pool = happybase.ConnectionPool(size=2, host='172.25.10.78')
+    pool = happybase.ConnectionPool(size=2, host='hbasemaster')
     with pool.connection() as conn:
         h_smt = conn.table('ETL_ESI_SMT_G4')
         h_tem = conn.table('ETL_WEATHER_INFO_24')
